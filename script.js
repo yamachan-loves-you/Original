@@ -31,12 +31,17 @@ const uselessWebsites = [
   "https://potato.io/"
 ];
 
-//  リストからランダムに1つのURLを選ぶ
-const randomIndex = Math.floor(Math.random() * uselessWebsites.length);
-const randomSite = uselessWebsites[randomIndex];
+// ボタンが押されたときにランダムなURLを新しいタブで開く関数
+function openRandomSiteInNewTab() {
+  // リストからランダムに1つのURLを選ぶ
+  const randomIndex = Math.floor(Math.random() * uselessWebsites.length);
+  const randomSite = uselessWebsites[randomIndex];
 
-// 選んだサイトにリダイレクトする
+  // 新しいタブで開く。noopener と noreferrer を付けてセキュリティを強化
+  // （クリックイベント由来なので、ポップアップブロッカーに引っかかる可能性は低いです）
+  window.open(randomSite, '_blank', 'noopener,noreferrer');
+}
 
-window.location.href = randomSite;
-// window.open(randomSite, "_blank");
-
+// ボタンにイベントリスナーを追加（script は body の最後で読み込まれるため DOM は存在している想定）
+const pleaseButton = document.getElementById('pleaseButton');
+pleaseButton.addEventListener('click', openRandomSiteInNewTab);
