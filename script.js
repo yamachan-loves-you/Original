@@ -36,4 +36,6 @@ const randomIndex = Math.floor(Math.random() * uselessWebsites.length);
 const randomSite = uselessWebsites[randomIndex];
 
 // 選んだサイトにリダイレクトする
-window.location.href = randomSite;
+
+// window.location.href = randomSite;
+window.open(randomSite, "_blank");
