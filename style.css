@@ -1,0 +1,39 @@
+/* ページ全体を中央揃えにする */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* 少し灰色の背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+/* 「PLEASE」ボタンのデザイン */
+#pleaseButton {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 40px;
+  cursor: pointer;
+  background-color: #ff4136; /* 本家に近い赤色 */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影をつける */
+  transition: transform 0.1s ease; /* アニメーション */
+}
+
+/* ボタンを押した瞬間に少し沈むエフェクト */
+#pleaseButton:active {
+  transform: scale(0.95);
+}
